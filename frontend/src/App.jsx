@@ -16,7 +16,7 @@ export default function App() {
       <Navbar />
       <main className="max-w-screen-xl mx-auto px-6 lg:px-10">
         <Routes>
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/journey" element={<JourneyPage />} />
           <Route path="/about" element={<AboutPage />} />
           <Route path="/projects" element={<ProjectsPage />} />

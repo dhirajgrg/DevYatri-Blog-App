@@ -26,9 +26,9 @@ export default function Footer() {
         <div>
           <div className="flex items-center gap-2 mb-3">
             <div className="w-2 h-2 bg-green-500 rounded-full" />
-            <span className="font-serif text-lg text-neutral-50">
+            <Link to={"/"} className="font-serif text-lg text-neutral-50">
               Dev Yatri
-            </span>
+            </Link>
           </div>
           <p className="font-sans text-sm text-neutral-600 leading-relaxed max-w-xs">
             An enterprise knowledge platform for senior engineers, architects,
@@ -40,7 +40,7 @@ export default function Footer() {
             <div className="section-label mb-4">{heading}</div>
             {links.map((l) => (
               <Link
-                to={`/${l}`}
+                to={l === "Home" ? "/" : `/${l.toLowerCase()}`}
                 key={l}
                 className="font-sans flex flex-col text-sm text-neutral-600 mb-2 cursor-pointer hover:text-neutral-300 transition-colors"
               >

@@ -22,13 +22,13 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 bg-green-500 rounded-full" />
           <Link
-            to={"/home"}
+            to={"/"}
             className="font-serif text-lg tracking-tight text-neutral-50"
           >
             Dev
           </Link>
           <Link
-            to={"/home"}
+            to={"/"}
             className="font-sans text-xs tracking-widest uppercase text-neutral-700 mt-0.5"
           >
             Yatri
@@ -37,15 +37,17 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {["Home","Journey", "blog", "Projects", "Portfolio", "About"].map((item) => (
-            <Link
-              to={`/${item.toLocaleLowerCase()}`}
-              key={item}
-              className="nav-link"
-            >
-              {item}
-            </Link>
-          ))}
+          {["Home", "Journey", "blog", "Projects", "Portfolio", "About"].map(
+            (item) => (
+              <Link
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+                key={item}
+                className="nav-link"
+              >
+                {item}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Actions */}
