@@ -1,51 +1,61 @@
+// PortfolioPage.jsx
+
 const experiences = [
   {
-    role: "Senior Software Engineer",
-    company: "Vercel",
-    period: "2023 – Present",
+    role: "Software Engineer (Future Goal)",
+    company: "Global Tech Company",
+    period: "2027 – Future",
     description:
-      "Working on edge infrastructure and the developer experience layer. Focused on reducing cold start times and improving build pipeline reliability at scale.",
-    tags: ["Go", "TypeScript", "Edge Computing", "CDN"],
+      "Working on scalable web systems and contributing to real-world products used by thousands of users.",
+    tags: ["Engineering", "Growth", "Impact"],
   },
   {
-    role: "Founding Engineer",
-    company: "Stealth Startup",
+    role: "Fullstack Developer (Student Projects)",
+    company: "Personal Projects",
+    period: "2024 – Present",
+    description:
+      "Built multiple fullstack applications using React, Node.js, Express, and MongoDB. Focused on clean architecture, API design, and real-world project structure.",
+    tags: ["React", "Node.js", "MongoDB", "Express"],
+  },
+  {
+    role: "Backend Developer (Learning Phase)",
+    company: "Self Learning",
+    period: "2023 – 2024",
+    description:
+      "Designed REST APIs, authentication systems, and database schemas while learning backend engineering concepts and scalable project structure.",
+    tags: ["Node.js", "Express", "JWT", "MongoDB"],
+  },
+  {
+    role: "Web Developer (Beginner)",
+    company: "Personal Practice",
     period: "2022 – 2023",
     description:
-      "First engineering hire. Built the core product from scratch, set up infrastructure, and helped grow the team from 2 to 12 engineers.",
-    tags: ["Node.js", "PostgreSQL", "AWS", "Product"],
-  },
-  {
-    role: "Backend Engineer",
-    company: "Shopify",
-    period: "2020 – 2022",
-    description:
-      "Worked on the Checkout team, handling millions of transactions per day. Led a project to reduce checkout latency by 40% for high-traffic merchants.",
-    tags: ["Ruby on Rails", "MySQL", "Redis", "Kafka"],
+      "Started with HTML, CSS, and JavaScript. Built static websites and small interactive projects to understand web fundamentals.",
+    tags: ["HTML", "CSS", "JavaScript"],
   },
 ];
 
 const skills = {
-  Languages: ["Go", "TypeScript", "Python", "Rust", "SQL"],
-  Backend: ["Node.js", "PostgreSQL", "Redis", "Kafka", "gRPC"],
-  Infrastructure: ["AWS", "Docker", "Kubernetes", "Terraform", "Cloudflare"],
-  Practices: ["System Design", "DDD", "TDD", "API Design", "Code Review"],
+  Languages: ["JavaScript", "Python", "SQL"],
+  Frontend: ["React", "HTML", "CSS", "Tailwind CSS"],
+  Backend: ["Node.js", "Express", "MongoDB", "REST APIs"],
+  Tools: ["Git", "GitHub", "VS Code", "Postman"],
 };
 
 const writing = [
   {
-    title: "Building Scalable Microservices with Event-Driven Architecture",
+    title: "My Journey Learning Fullstack JavaScript from Nepal",
     pub: "This blog",
     year: "2026",
   },
   {
-    title: "The 5 Database Mistakes Startups Make",
-    pub: "Hacker News #1",
+    title: "How I Built My First Backend API with Node.js",
+    pub: "This blog",
     year: "2025",
   },
   {
-    title: "Understanding PostgreSQL Query Plans",
-    pub: "Dev.to",
+    title: "Mistakes I Made Learning Web Development",
+    pub: "This blog",
     year: "2024",
   },
 ];
@@ -57,27 +67,30 @@ export default function PortfolioPage() {
       <div className="border-b border-neutral-900 pb-12 mb-12">
         <div className="flex items-center gap-3 mb-5">
           <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
-          <span className="hero-label">Work & Experience</span>
+          <span className="hero-label">Work & Learning Experience</span>
         </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-12 items-start">
           <div>
             <h1 className="font-serif text-5xl md:text-6xl font-normal tracking-tight text-neutral-100 leading-tight mb-4">
               Portfolio
             </h1>
+
             <p className="font-sans text-base text-neutral-500 leading-relaxed max-w-xl">
-              5+ years building backend systems, distributed infrastructure, and
-              developer tools. Currently focused on edge computing and
-              high-performance APIs.
+              Student software engineer from Nepal learning fullstack
+              development. Focused on building real-world projects, backend
+              systems, and scalable web applications.
             </p>
           </div>
+
           {/* CTA card */}
           <div className="bg-neutral-950 border border-neutral-900 rounded-sm p-6">
             <div className="meta-text mb-4">Available for</div>
             <div className="space-y-2 mb-5">
               {[
-                "Consulting",
-                "Technical Writing",
-                "Open Source Sponsorship",
+                "Internships",
+                "Open Source Collaboration",
+                "Freelance Projects",
               ].map((s) => (
                 <div key={s} className="flex items-center gap-2">
                   <div className="w-1 h-1 bg-green-500 rounded-full" />
@@ -88,7 +101,7 @@ export default function PortfolioPage() {
               ))}
             </div>
             <button className="btn-green w-full justify-center">
-              Get in Touch
+              Contact Me
             </button>
           </div>
         </div>
@@ -100,6 +113,7 @@ export default function PortfolioPage() {
           <span className="section-label">Experience</span>
           <div className="flex-1 h-px bg-neutral-900" />
         </div>
+
         <div className="space-y-1 border border-neutral-900 rounded-sm overflow-hidden">
           {experiences.map((exp, i) => (
             <div
@@ -120,9 +134,11 @@ export default function PortfolioPage() {
                   </div>
                 </div>
               </div>
+
               <p className="font-sans text-sm text-neutral-500 leading-relaxed mb-4 max-w-2xl">
                 {exp.description}
               </p>
+
               <div className="flex gap-2 flex-wrap">
                 {exp.tags.map((t) => (
                   <span key={t} className="tag-pill">
@@ -141,6 +157,7 @@ export default function PortfolioPage() {
           <span className="section-label">Skills & Tools</span>
           <div className="flex-1 h-px bg-neutral-900" />
         </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-px bg-neutral-900 border border-neutral-900 rounded-sm overflow-hidden">
           {Object.entries(skills).map(([category, items]) => (
             <div key={category} className="bg-neutral-950 p-6">
@@ -160,12 +177,13 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Notable Writing */}
+      {/* Writing */}
       <section>
         <div className="flex items-center gap-3 mb-8">
-          <span className="section-label">Notable Writing</span>
+          <span className="section-label">Blog & Writing</span>
           <div className="flex-1 h-px bg-neutral-900" />
         </div>
+
         <div className="space-y-px border border-neutral-900 rounded-sm overflow-hidden">
           {writing.map((w, i) => (
             <div

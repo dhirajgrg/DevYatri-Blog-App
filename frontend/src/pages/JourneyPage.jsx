@@ -1,59 +1,69 @@
+// JourneyPage.jsx
+
 const milestones = [
   {
-    year: "2024",
-    title: "Started DevYatri",
+    year: "2026",
+    title: "Building My Personal Engineering Blog",
     description:
-      "Launched this blog to document my engineering journey — the lessons, the failures, the wins. Writing became a way to think clearly.",
-    tags: ["Writing", "Community", "Open Source"],
+      "Started this blog to document my journey learning fullstack development. Writing helps me think clearly, track progress, and share what I learn with others.",
+    tags: ["Writing", "Learning", "Personal Brand"],
     icon: "🚀",
   },
   {
-    year: "2023",
-    title: "Joined a Product-Led Startup",
+    year: "2025",
+    title: "Deep Dive into Fullstack JavaScript",
     description:
-      "Joined as a founding engineer at an early-stage SaaS company. Wore many hats — from infrastructure to customer calls. Learned what shipping really means.",
-    tags: ["Startup", "Full Stack", "Leadership"],
+      "Focused on mastering JavaScript, React, Node.js, Express, and MongoDB. Built multiple real-world projects and learned how frontend and backend systems work together.",
+    tags: ["JavaScript", "Fullstack", "Projects"],
     icon: "⚡",
   },
   {
-    year: "2022",
-    title: "Deep Dive into Systems Design",
+    year: "2024",
+    title: "Built My First Backend APIs",
     description:
-      "Spent the year obsessing over distributed systems, databases, and architecture patterns. Read everything — papers, books, blog posts. Built small systems to understand big ones.",
-    tags: ["Architecture", "Distributed Systems", "Learning"],
+      "Created REST APIs with Node.js and Express, connected MongoDB, and deployed small apps. This is when backend engineering really clicked for me.",
+    tags: ["Backend", "Node.js", "APIs"],
     icon: "🏗️",
   },
   {
-    year: "2021",
-    title: "First Open Source Contribution",
+    year: "2023",
+    title: "Started Learning Programming Seriously",
     description:
-      "Merged my first PR into a project with 10k+ stars. A two-line fix. Took me three weeks of reading the codebase. Worth every hour.",
-    tags: ["Open Source", "Community", "GitHub"],
+      "Followed structured courses, practiced coding daily, and learned Git & GitHub. Began thinking like a software engineer, not just a student.",
+    tags: ["Git", "Discipline", "Learning"],
     icon: "🌱",
   },
   {
-    year: "2020",
-    title: "Discovered Backend Engineering",
+    year: "2022",
+    title: "Discovered Web Development",
     description:
-      "Built my first REST API from scratch, deployed it to a $5 VPS, stayed up all night watching logs. Fell in love with the craft.",
-    tags: ["Backend", "Node.js", "APIs"],
+      "Built my first websites with HTML, CSS, and JavaScript. Seeing my code live in a browser was a turning point.",
+    tags: ["HTML", "CSS", "JavaScript"],
     icon: "💡",
   },
   {
-    year: "2019",
-    title: "Wrote First Line of Code",
+    year: "2021",
+    title: "Wrote My First Line of Code",
     description:
-      'A Python script that printed "Hello, World!". I didn\'t know it then, but that single line would change the direction of my life entirely.',
-    tags: ["Python", "Beginnings"],
+      'Printed "Hello, World!" and realized coding could change my future. That moment started my journey into software engineering.',
+    tags: ["Beginnings", "Programming"],
     icon: "👨‍💻",
+  },
+  {
+    year: "2027",
+    title: "Working as a Professional Software Engineer",
+    description:
+      "Started working as a software engineer, building scalable applications and contributing to real-world products.",
+    tags: ["Career", "Engineering", "Growth"],
+    icon: "🎯",
   },
 ];
 
 const stats = [
-  { value: "5+", label: "Years in tech" },
-  { value: "12", label: "Companies worked with" },
-  { value: "40+", label: "Articles published" },
-  { value: "3", label: "Countries lived in" },
+  { value: "3+", label: "Years Learning Code" },
+  { value: "15+", label: "Projects Built" },
+  { value: "300+", label: "GitHub Commits" },
+  { value: "Nepal 🇳🇵", label: "Based In" },
 ];
 
 export default function JourneyPage() {
@@ -65,12 +75,15 @@ export default function JourneyPage() {
           <div className="w-1.5 h-1.5 bg-green-500 rounded-full" />
           <span className="hero-label">My Story</span>
         </div>
+
         <h1 className="font-serif text-5xl md:text-6xl font-normal tracking-tight text-neutral-100 leading-tight mb-4">
           The Journey
         </h1>
+
         <p className="font-sans text-base text-neutral-500 leading-relaxed">
-          Every engineer has a story. This is mine — the milestones, the pivots,
-          the people, and the code that shaped how I think and build.
+          Every developer starts somewhere. This is my journey from a student in
+          Nepal to becoming a professional software engineer — the milestones,
+          the struggles, and the lessons learned through building real projects.
         </p>
       </div>
 
@@ -98,16 +111,20 @@ export default function JourneyPage() {
           {milestones.map((m, idx) => (
             <div
               key={m.year}
-              className={`relative flex flex-col md:flex-row gap-8 md:gap-16 ${idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+              className={`relative flex flex-col md:flex-row gap-8 md:gap-16 ${
+                idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+              }`}
             >
-              {/* Year bubble (center) */}
+              {/* Icon Bubble */}
               <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 bg-black border border-green-500 rounded-full flex items-center justify-center z-10 text-sm">
                 {m.icon}
               </div>
 
-              {/* Content card */}
+              {/* Card */}
               <div
-                className={`ml-12 md:ml-0 md:w-1/2 ${idx % 2 === 0 ? "md:pr-16" : "md:pl-16"}`}
+                className={`ml-12 md:ml-0 md:w-1/2 ${
+                  idx % 2 === 0 ? "md:pr-16" : "md:pl-16"
+                }`}
               >
                 <div className="bg-neutral-950 border border-neutral-900 rounded-sm p-6 hover:border-neutral-700 transition-colors">
                   <div className="flex items-center gap-3 mb-3">
@@ -115,12 +132,15 @@ export default function JourneyPage() {
                       {m.year}
                     </span>
                   </div>
+
                   <h3 className="font-serif text-xl text-neutral-100 mb-2 font-normal">
                     {m.title}
                   </h3>
+
                   <p className="font-sans text-sm text-neutral-500 leading-relaxed mb-4">
                     {m.description}
                   </p>
+
                   <div className="flex gap-2 flex-wrap">
                     {m.tags.map((t) => (
                       <span key={t} className="tag-pill">
@@ -131,7 +151,7 @@ export default function JourneyPage() {
                 </div>
               </div>
 
-              {/* Spacer for opposite side */}
+              {/* Spacer */}
               <div className="hidden md:block md:w-1/2" />
             </div>
           ))}

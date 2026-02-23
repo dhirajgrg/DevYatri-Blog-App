@@ -4,11 +4,11 @@ export default function Navbar() {
   return (
     <>
       {/* Announcement bar */}
-      <div className="bg-green-500 py-2 text-center">
+      {/* <div className="bg-green-500 py-2 text-center">
         <span className="font-sans text-xs font-semibold tracking-widest uppercase text-black">
           New Series: Enterprise Architecture in 2026 &rarr; Read Now
         </span>
-      </div>
+      </div> */}
 
       {/* Nav */}
       <nav
